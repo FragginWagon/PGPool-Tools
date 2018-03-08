@@ -1,0 +1,48 @@
+<div id="server-account-upload" scroll-glue>
+    <h1 class="p-10" scroll-glue-anchor>
+        {{vm.title}}
+    </h1>
+    
+    <hr>
+    
+    <md-content class="md-padding" >
+        <div layout="row" layout-align="space-around start" >
+            <div layout="column" layout-align="space-around center">
+                <input type="file" file-reader="vm.fileContent"/>
+                <div ng-if="vm.fileContent || vm.formattedContents.length > 0" class="content">
+                    <p ng-repeat="item in vm.formattedContents track by $index">
+                        {{item}}
+                    </p>
+                </div>
+            </div>
+            <div layout="row" layout-align="space-around start" style="width: 100%;">
+                <div layout="column" layout-align="space-around center" style="width: 100%;">
+                    <md-input-container flex="100" class="md-block" style="width: 100%;">
+                    <textarea type="text" class="note-description-textarea" placeholder="Accounts"
+                              ng-model="vm.accounts">
+                    </textarea>
+                    </md-input-container>
+                    <md-button class="md-raised md-accent" ng-click="vm.scrollToTop()">Scroll To Top</md-button>
+                </div>
+            </div>
+            <!-- PROVIDING BASIC LEVEL -->
+            <!--<div layout="column" layout-align="space-around center">-->
+                <!--<md-input-container class="md-block">-->
+                    <!--<label>Select Level</label>-->
+                    <!--<md-select name="selectLevel" ng-model="vm.selectedLevel" placeholder="Select Level" class="md-block">-->
+                        <!--<md-option ng-repeat="lvl in vm.levels" value="{{lvl}}">-->
+                            <!--{{lvl}}-->
+                        <!--</md-option>-->
+                    <!--</md-select>-->
+                <!--</md-input-container>-->
+            <!--</div>-->
+            <!-- / PROVIDING BASIC LEVEL -->
+            <div layout="column" layout-align="space-around center">
+                <md-button class="md-raised md-accent" ng-click="vm.saveContents()" ng-disabled="!vm.formattedContents || vm.formattedContents.length === 0 && !vm.saveInProgress">Save</md-button>
+            </div>
+        </div>
+    </md-content>
+
+</div>
+
+
