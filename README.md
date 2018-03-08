@@ -34,6 +34,7 @@ add in `flask-cors` to the `requirements.txt`
 in `pgpool.py` you will need to add a few lines:
 
 > add `from flask_cors import CORS` under `from flask import Flask, request, jsonify`
+
 > add `CORS(app)` under `app = Flask(__name__)`
 
 the above two will allow cross domain communication so you wont hit any CORS issues when you try and save the accounts
