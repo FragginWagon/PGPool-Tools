@@ -2,7 +2,7 @@
 	'use strict';
 	
 	angular
-	.module('pgpool-tools')
+	.module('fuse')
 	.config(routeConfig);
 	
 	/** @ngInject */
